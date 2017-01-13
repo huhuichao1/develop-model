@@ -1,10 +1,17 @@
 package com.develop.model.javase.object.equals;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 /**
  * 比较2个对象是否相等
  * 
  * @author hhc
- *
+ *	 ==比较的是两个对象的地址，是不是同一个对象
+  equals是个方法，这个看怎么写了。String中重写了equals方法，比较其内容，在Object中都是比较是否同一个对象。
+hashcode：是计算散列值得一个方法，一般情况下，重写equal 方法之后，都重写hashcode保证一致。
+hashcode只在集合中使用，在放入set中，在判断元素的hashcode是否一致，然后再比较equal是否相等。
  */
 public class Point {
 
@@ -55,19 +62,25 @@ public class Point {
 	}
 
 	// 必须重写hashCode
-
+    
 	@Override
 	public int hashCode() {
 		// 值可以根据自己算法任意设定,如果equals比较的结果是true话
 		// 当前对象和比较的对象, hashCode()返回值必须相等
 		// hashCode()返回值相等,跟两个对象相等无关
-		return 10 * x + y;
+		return  1;
 	}
 	
 	
 	public static void main(String[] args) {
 		Point p=new Point(1, 2);
-		Point p1=new Point(1, 3);
-		System.out.println(p.equals(p1));
+		Point p1=new Point(1, 2);
+		HashSet s=new HashSet();
+		s.add(p);
+		s.add(p1);
+		System.out.println(p.equals(p1));System.out.println(s.size());
+		List list= new ArrayList();
+		list.add(p1);list.add(p);
+		System.out.println(list.size());
 	}
 }

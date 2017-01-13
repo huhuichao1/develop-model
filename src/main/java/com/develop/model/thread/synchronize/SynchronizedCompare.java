@@ -14,7 +14,7 @@ package com.develop.model.thread.synchronize;
  * @author huhuichao
  *
  */
-public class InCommonMethod {
+public class SynchronizedCompare {
 
     public synchronized void m1() throws InterruptedException{
         System. out.println("m1 call" );
@@ -31,7 +31,7 @@ public class InCommonMethod {
    }
 
    public static void main(String[] args) {
-         final InCommonMethod thisObj  = new InCommonMethod();
+         final SynchronizedCompare thisObj  = new SynchronizedCompare();
 
         Thread t1 = new Thread(){
              @Override
