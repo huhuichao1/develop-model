@@ -1,4 +1,4 @@
-package com.develop.model.web;
+package com.develop.model.web.spring;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

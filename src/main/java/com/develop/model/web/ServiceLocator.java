@@ -1,6 +1,9 @@
 package com.develop.model.web;
 
 import org.apache.log4j.Logger;
+import org.springframework.context.ApplicationContext;
+
+import com.develop.model.web.spring.DefaultServiceLocator;
 
 public class ServiceLocator extends DefaultServiceLocator { 
 	  private static Logger logger = Logger.getLogger(ServiceLocator.class);;
