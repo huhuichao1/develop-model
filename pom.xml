@@ -111,6 +111,11 @@
 			<version>4.2.6.RELEASE</version>
 
 		</dependency>
+		<dependency>
+			<groupId>org.wltea</groupId>
+			<artifactId>IK-Analyzer-2012FF</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 
 	</dependencies>

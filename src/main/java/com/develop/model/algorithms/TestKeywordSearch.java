@@ -34,16 +34,16 @@ public class TestKeywordSearch {
 	 * 这里采用指数函数，主要是在k较小时，分数也能明显的区分，而k很大时，分数的区别也较小，这也是符合用户逻辑的，对于用户来说2公里和10公里区别较大，对用户的决策有较大影响。而300公里和330公里对于用户来说，其实区别是不大的。
 	 */
 	public static void testdistance() {
-		Double d1 = 0.98d;
-		System.out.println(Math.pow(d1, 0) + "           0");
-		System.out.println(Math.pow(d1, 0.5) + "         0.5");
-		System.out.println(Math.pow(d1, 3) + "        3");
-		System.out.println(Math.pow(d1, 5) + "        5");
+		Double d1 = 0.95d;
+		System.out.println(Math.pow(d1, 0) + "          	 0");
+		System.out.println(Math.pow(d1, 0.1486) + "         0.1486");
+		System.out.println(Math.pow(d1, 1) + "        		1");
+		System.out.println(Math.pow(d1, 5.2) + "       		 5.2");
 		System.out.println(Math.pow(d1, 10) + "       10");
 		System.out.println(Math.pow(d1, 30) + "       30");
 		System.out.println(Math.pow(d1, 50) + "       50");
 		System.out.println(Math.pow(d1, 100) + "       100");
-		System.out.println(Math.pow(d1, 2000d) + "       200");
+		System.out.println(Math.pow(d1, 200d) + "       200");
 	}
 
 	
@@ -129,6 +129,16 @@ public class TestKeywordSearch {
 	public static double discountScore(double p1,double p2){
 		return (p1-p2)/p1;
 	}
+	
+	public static double saleScore(double n) {
+		double saleScore=0.4;
+		if(n<1000){
+			saleScore=0.4+Math.log10(n)*0.2;
+		}else{
+			saleScore=1;
+		}
+		return saleScore;
+	}
 	public static void main(String[] args) throws ParseException {
 		// int[] i={1,2,5,7,10,30,80,100,500,1000};
 		// int[] i={-1,0,1,2,3,4,5,6,7,8,9,10,11};
@@ -137,15 +147,17 @@ public class TestKeywordSearch {
 		// double brandHot = brandHot(s);
 		// System.out.println(brandHot);
 		// }
+//		testdistance();
 //		System.out.println(convert(1472745600000l));
 //		System.out.println(convertTime("201609221240"));
 //		String s="as";
 //		String s1=s.replace("a", "1");
 //		System.out.println(s+","+s1);
 //		testdistance();
-//		System.out.println(log(1024, 2));
+//		System.out.println(log(1024, 11));
 //		System.out.println(Math.log10(1000000000000000d));
 //		System.out.println(arctan(1));
-		System.out.println(discountScore(10,1));
+//		System.out.println(discountScore(10,1));
+		System.out.println(saleScore(0d));System.out.println(saleScore(10d));System.out.println(saleScore(100d));System.out.println(saleScore(1000d));System.out.println(saleScore(100000d));
 	}
 }

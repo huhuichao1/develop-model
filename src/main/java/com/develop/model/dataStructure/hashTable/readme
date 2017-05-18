@@ -1,0 +1,13 @@
+hashtable  就是散列表
+
+访问速度很快
+需要额外的空间
+无序
+可能发生碰撞
+散列表经常用于缓存和快速查找。
+
+java中的hashMap
+
+
+http://blog.csdn.net/jrn1012/article/details/53437561
+
