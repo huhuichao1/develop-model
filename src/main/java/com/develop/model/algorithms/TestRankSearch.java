@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TestKeywordSearch {
+public class TestRankSearch {
 
 	/**
 	 * Math.pow(0.85, Math.log1p(Math.max((double) (System.currentTimeMillis()-_doc.pubTime.value) / 86400000, 0)))

@@ -35,7 +35,7 @@ import org.elasticsearch.search.sort.SortOrder;
 public class ElasticSearchDistance {
     public static void main(String[] args) throws Exception {
         EsSupport esSupport = new EsSupport();
-        esSupport.setAddress("10.213.129.68:11300");
+        esSupport.setAddress("10.213.129.68:11300;10.213.129.69:11300;10.213.129.70:11300");
         Client client = esSupport.getClient();
 
         String index = "testes2";
